@@ -8,7 +8,7 @@ const DashRoute=express.Router();
 DashRoute.post("/employees",authentication,async(req,res)=>{
     const { FirstName,LastName,Email,Department,Salary}=req.body;
     try {
-        let employee=await new EmployeeModel({Name:`${FirstName} ${LastName}`,Email,Department,Salary});
+        let employee=await new EmployeeModel({FirstName,LastName,Email,Department,Salary});
         employee.save();
         res.status(201).send({msg:"employee data saved !"})
     } catch (error) {
