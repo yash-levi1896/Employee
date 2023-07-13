@@ -1,7 +1,8 @@
 const mongoose=require("mongoose");
 
 const employeeschema=mongoose.Schema({
-    Name:String,
+    FirstName:String,
+    LastName:String,
     Email:String,
     Department:String,
     Salary:Number
