@@ -15,7 +15,7 @@ app.get("/",async(req,res)=>{
 })
 
 app.use("/",UserRoute)
-app.use(authentication)
+//app.use(authentication)
 app.use("/dashboard",DashRoute)
 
 

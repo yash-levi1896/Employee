@@ -1,10 +1,11 @@
 const express=require("express");
 const { EmployeeModel } = require("../Models/employee.modle");
+const {authentication}=require("../Middleware/authentication.middleware")
 const DashRoute=express.Router();
 
 
 
-DashRoute.post("/employees",async(req,res)=>{
+DashRoute.post("/employees",authentication,async(req,res)=>{
     const { FirstName,LastName,Email,Department,Salary}=req.body;
     try {
         let employee=await new EmployeeModel({Name:`${FirstName} ${LastName}`,Email,Department,Salary});
