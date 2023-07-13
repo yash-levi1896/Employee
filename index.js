@@ -3,11 +3,12 @@ app=express();
 const {connection}=require('./db');
 const {UserRoute}=require("./Routes/user.route")
 const {DashRoute}=require("./Routes/dash.route");
+const cors=require("cors");
 const { authentication } = require('./Middleware/authentication.middleware');
 require('dotenv').config()
 
 app.use(express.json());
-
+app.use(cors())
 
 app.get("/",async(req,res)=>{
     res.send("hi")
