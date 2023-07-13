@@ -45,9 +45,9 @@ DashRoute.get("/filter",async(req,res)=>{
     if(Department){
         filter.Department=Department
     }
-    let pageNo=page||1;
+   // let pageNo=page||1;
     try {
-        let data=await EmployeeModel.find(filter).skip(5*(pageNo-1)).limit(5);
+        let data=await EmployeeModel.find(filter)
     res.status(201).send({msg:data})
     } catch (error) {
         res.status(400).send({msg:"some error occurred !"})
